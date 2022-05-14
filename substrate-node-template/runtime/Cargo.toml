@@ -59,6 +59,9 @@ substrate-wasm-builder = { version = "5.0.0-dev", git = "https://github.com/pari
 [features]
 default = ["std"]
 std = [
+	'pallet-aura/std',
+    'pallet-balances/std',
+    'pallet-nicks/std',
 	"codec/std",
 	"scale-info/std",
 	"frame-executive/std",
