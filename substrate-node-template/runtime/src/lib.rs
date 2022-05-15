@@ -196,6 +196,10 @@ impl frame_system::Config for Runtime {
 	type MaxConsumers = frame_support::traits::ConstU32<16>;
 }
 
+impl pallet_identity::Config for Runtime {
+	type Event = Event;
+}
+
 impl pallet_randomness_collective_flip::Config for Runtime {}
 
 impl pallet_aura::Config for Runtime {

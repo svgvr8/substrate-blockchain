@@ -15,8 +15,9 @@ targets = ["x86_64-unknown-linux-gnu"]
 [dependencies]
 codec = { package = "parity-scale-codec", version = "3.0.0", default-features = false, features = ["derive"] }
 scale-info = { version = "2.0.1", default-features = false, features = ["derive"] }
+custom-blockchain-pallet = { default_features = false, git = 'https://github.com/svgvr8/custom-blockchain-pallet.git', branch = "master"}
 
-pallet-nicks = { default-features = false, git = "https://github.com/paritytech/substrate.git", branch = "polkadot-v0.9.20" }
+pallet-nicks = { version = "1.0.0", default-features = false, git = "https://github.com/paritytech/substrate.git", branch = "polkadot-v0.9.20" }
 
 pallet-aura = { version = "4.0.0-dev", default-features = false, git = "https://github.com/paritytech/substrate.git", branch = "polkadot-v0.9.20" }
 pallet-balances = { version = "4.0.0-dev", default-features = false, git = "https://github.com/paritytech/substrate.git", branch = "polkadot-v0.9.20" }
@@ -56,9 +57,11 @@ pallet-template = { version = "4.0.0-dev", default-features = false, path = "../
 [build-dependencies]
 substrate-wasm-builder = { version = "5.0.0-dev", git = "https://github.com/paritytech/substrate.git", branch = "polkadot-v0.9.20" }
 
+
 [features]
 default = ["std"]
 std = [
+	'custom-blockchain-pallet/std',
 	'pallet-aura/std',
     'pallet-balances/std',
     'pallet-nicks/std',
