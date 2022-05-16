@@ -196,6 +196,12 @@ impl frame_system::Config for Runtime {
 	type MaxConsumers = frame_support::traits::ConstU32<16>;
 }
 
+/// Configure the pallet-template in pallets/template.
+impl pallet_template::Config for Runtime {
+	type Event = Event;
+	type MaxBytesInHash = frame_support::traits::ConstU32<64>;
+}
+
 impl pallet_randomness_collective_flip::Config for Runtime {}
 
 impl pallet_aura::Config for Runtime {
@@ -261,11 +267,6 @@ impl pallet_transaction_payment::Config for Runtime {
 impl pallet_sudo::Config for Runtime {
 	type Event = Event;
 	type Call = Call;
-}
-
-/// Configure the pallet-template in pallets/template.
-impl pallet_template::Config for Runtime {
-	type Event = Event;
 }
 
 // Create the runtime by composing the FRAME pallets that were previously configured.
