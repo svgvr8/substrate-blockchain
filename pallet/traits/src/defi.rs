@@ -289,7 +289,7 @@ pub trait SellEngine<Configuration>: DeFiEngine {
 	) -> Result<(), DispatchError>;
 }
 
-pub trait DeFiComposableConfig: frame_system::Config {
+pub trait DeFiConfig: frame_system::Config {
 	type MayBeAssetId: AssetIdLike + MaybeSerializeDeserialize + Default + MaxEncodedLen + Debug;
 
 	type Balance: BalanceLike

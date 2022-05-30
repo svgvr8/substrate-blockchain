@@ -1,4 +1,4 @@
-//! Definitions for types used throughout the Composable Rust project
+//! Definitions for types used throughout the Rust project
 
 use codec::{Decode, Encode, MaxEncodedLen};
 use scale_info::TypeInfo;

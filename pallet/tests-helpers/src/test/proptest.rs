@@ -18,7 +18,7 @@ macro_rules! prop_assert_ok {
 #[macro_export]
 macro_rules! prop_assert_err {
     ($cond:expr, $err:expr) => {
-        composable_tests_helpers::prop_assert_err!($cond, $err, concat!("error assertion failed: ", stringify!($cond)))
+        tests_helpers::prop_assert_err!($cond, $err, concat!("error assertion failed: ", stringify!($cond)))
     };
 
     ($cond:expr, $err:expr, $($fmt:tt)*) => {
@@ -42,7 +42,7 @@ macro_rules! prop_assert_noop {
 		$y:expr $(,)?
 	) => {
 		let h = frame_support::storage_root(sp_core::storage::StateVersion::V0);
-		composable_tests_helpers::prop_assert_err!($x, $y);
+		tests_helpers::prop_assert_err!($x, $y);
 		proptest::prop_assert_eq!(
 			h,
 			frame_support::storage_root(sp_core::storage::StateVersion::V0)
@@ -54,7 +54,7 @@ macro_rules! prop_assert_noop {
 #[macro_export]
 macro_rules! prop_assert_acceptable_computation_error {
 	($x:expr, $y:expr, $precision:expr, $epsilon:expr) => {{
-		match composable_tests_helpers::test::helper::acceptable_computation_error(
+		match tests_helpers::test::helper::acceptable_computation_error(
 			$x, $y, $precision, $epsilon,
 		) {
 			Ok(()) => {},
@@ -67,8 +67,8 @@ macro_rules! prop_assert_acceptable_computation_error {
 		prop_assert_acceptable_computation_error!(
 			$x,
 			$y,
-			composable_tests_helpers::test::helper::DEFAULT_PRECISION,
-			composable_tests_helpers::test::helper::DEFAULT_EPSILON
+			tests_helpers::test::helper::DEFAULT_PRECISION,
+			tests_helpers::test::helper::DEFAULT_EPSILON
 		);
 	}};
 }

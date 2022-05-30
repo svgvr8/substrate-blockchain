@@ -1,6 +1,6 @@
 use core::ops::Mul;
 
-use composable_support::math::safe::SafeAdd;
+use support::math::safe::SafeAdd;
 use frame_support::traits::Hooks;
 use frame_system::Config as FrameSystemConfig;
 use pallet_timestamp::Config as PalletTimestampConfig;

@@ -22,7 +22,7 @@ mod test_storage_nonce;
 ///
 /// ```plaintext
 /// error: useless lint attribute
-///   --> frame/composable-support/src/abstractions/nonce/mod.rs:14:1
+///   --> frame/support/src/abstractions/nonce/mod.rs:14:1
 ///    |
 /// 14 | #[allow(clippy::disallowed_types)]
 ///    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: if you just forgot a `!`, use: `#![allow(clippy::disallowed_types)]`
