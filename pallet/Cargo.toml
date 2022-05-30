@@ -29,12 +29,25 @@ sp-runtime = { default-features = false, version = "6.0.0", git = "https://githu
 [features]
 default = ["std"]
 std = [
-	"codec/std",
-	"scale-info/std",
-	"frame-support/std",
-	"frame-system/std",
-	"frame-benchmarking/std",
+  "codec/std",
+  "log/std",
+  "composable-traits/std",
+  "scale-info/std",
+  "frame-support/std",
+  "frame-system/std",
+  "sp-runtime/std",
+  "sp-io/std",
+  "sp-core/std",
+  "sp-std/std",
+  "xcm/std",
+  "num-traits/std",
 ]
 
-runtime-benchmarks = ["frame-benchmarking/runtime-benchmarks"]
-try-runtime = ["frame-support/try-runtime"]
+runtime-benchmarks = [
+  "frame-benchmarking",
+  "frame-support/runtime-benchmarks",
+  "frame-system/runtime-benchmarks",
+]
+
+visualization = ["plotters"]
+
