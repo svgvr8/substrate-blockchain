@@ -43,7 +43,7 @@ scale-info = { version = "2.1.1", default-features = false, features = [
 ] }
 
 [dev-dependencies]
-tests-helpers = { path = "../tests-helpers" }
+tests-helpers = { path = "tests-helpers" }
 frame-benchmarking = { default-features = false, git = "https://github.com/paritytech/substrate", branch = "polkadot-v0.9.19" }
 orml-tokens = { git = "https://github.com/open-web3-stack/open-runtime-module-library", rev = "238828ac2bafe498a2a071317639e9404d6f6994" }
 orml-traits = { git = "https://github.com/open-web3-stack/open-runtime-module-library", rev = "238828ac2bafe498a2a071317639e9404d6f6994" }
@@ -74,4 +74,3 @@ runtime-benchmarks = [
 ]
 
 visualization = ["plotters"]
-
